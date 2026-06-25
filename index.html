@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<!-- saved from url=(0219)file:///Users/rutvik/Library/Application%20Support/Claude/local-agent-mode-sessions/a0eb4efd-ae77-4086-889d-b49feadc03b4/0c999ac2-25b0-4863-902e-26bb45f469ac/local_7d53d35e-8d64-4956-9afd-73ad3e6096f9/outputs/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🌴 Goa Trip — Rutvik's Travel App</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --teal:#0d9488;--teal2:#0891b2;--teal-light:#ccfbf1;
+  --orange:#ea580c;--orange-light:#fff7ed;
+  --blue:#2563eb;--blue-light:#eff6ff;
+  --purple:#7c3aed;--purple-light:#f5f3ff;
+  --green:#16a34a;--green-light:#f0fdf4;
+  --red:#dc2626;--red-light:#fef2f2;
+  --yellow:#ca8a04;--yellow-light:#fefce8;
+  --indigo:#4338ca;--pink:#db2777;
+  --border:#e2e8f0;--gray:#475569;--bg:#f1f5f9;
+  --card:#ffffff;--text:#1e293b;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:480px;margin:0 auto;position:relative;overflow-x:hidden}
+
+/* HEADER */
+.app-header{background:linear-gradient(135deg,#0d9488,#0891b2 50%,#1d4ed8);color:#fff;padding:20px 16px 16px;position:relative;overflow:hidden}
+.app-header::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.08)}
+.app-header::after{content:'';position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.header-emoji{font-size:2rem;display:block;margin-bottom:4px}
+.header-title{font-size:1.3rem;font-weight:800;letter-spacing:-0.3px}
+.header-sub{font-size:0.78rem;opacity:0.85;margin-top:3px}
+.header-group{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.passenger-chip{background:rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;font-size:0.7rem;font-weight:600;backdrop-filter:blur(4px)}
+
+/* FLIGHT BANNER */
+.checkin-banner{margin:14px 12px 0;border-radius:14px;padding:14px;display:flex;align-items:flex-start;gap:12px;animation:pulse-border 2s infinite}
+.checkin-banner.open{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #16a34a}
+.checkin-banner.soon{background:linear-gradient(135deg,#fefce8,#fef9c3);border:2px solid #ca8a04}
+.checkin-banner.waiting{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #3b82f6}
+@keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,0.2)}50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+.banner-icon{font-size:1.8rem;flex-shrink:0}
+.banner-text .banner-title{font-size:0.9rem;font-weight:800}
+.banner-text .banner-sub{font-size:0.75rem;color:var(--gray);margin-top:2px}
+.banner-text .countdown-timer{font-size:1.1rem;font-weight:900;margin-top:4px;letter-spacing:1px}
+.banner-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.action-btn{padding:7px 14px;border-radius:8px;font-size:0.75rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:none;transition:all 0.2s}
+.btn-green{background:#16a34a;color:#fff}
+.btn-green:hover{background:#15803d}
+.btn-blue{background:#2563eb;color:#fff}
+.btn-blue:hover{background:#1d4ed8}
+.btn-orange{background:#ea580c;color:#fff}
+.btn-orange:hover{background:#c2410c}
+.btn-ghost{background:#f1f5f9;color:var(--gray);border:1px solid var(--border)}
+.btn-ghost:hover{background:#e2e8f0}
+.btn-indigo{background:#4338ca;color:#fff}
+.btn-purple{background:#7c3aed;color:#fff}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--border);display:flex;z-index:200;box-shadow:0 -4px 20px rgba(0,0,0,0.08)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 4px 6px;cursor:pointer;transition:all 0.2s;gap:2px}
+.nav-item .nav-icon{font-size:1.25rem;transition:transform 0.2s}
+.nav-item .nav-label{font-size:0.6rem;font-weight:600;color:#94a3b8;transition:color 0.2s}
+.nav-item.active .nav-icon{transform:scale(1.15)}
+.nav-item.active .nav-label{color:var(--teal)}
+.nav-item:hover .nav-label{color:var(--teal)}
+
+/* SECTIONS */
+.section{display:none;padding:14px 12px 90px}
+.section.active{display:block}
+
+/* CARDS */
+.card{background:var(--card);border-radius:14px;padding:14px;margin-bottom:12px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.card-title{font-size:0.85rem;font-weight:800;color:var(--gray);display:flex;align-items:center;gap:7px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.section-label{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin:16px 0 8px}
+
+/* FLIGHT CARDS */
+.flight-card{border-radius:14px;overflow:hidden;margin-bottom:12px;border:1px solid var(--border)}
+.flight-header{padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.flight-header.outbound{background:linear-gradient(90deg,#dbeafe,#e0f2fe)}
+.flight-header.return{background:linear-gradient(90deg,#dcfce7,#d1fae5)}
+.flight-num{font-size:0.95rem;font-weight:900}
+.pnr-badge{background:#fff;border-radius:6px;padding:3px 10px;font-size:0.7rem;font-weight:800;letter-spacing:1px}
+.flight-body{padding:14px;background:#fff}
+.flight-route{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.airport-box{text-align:center}
+.airport-code{font-size:1.5rem;font-weight:900}
+.airport-time{font-size:0.95rem;font-weight:700;color:var(--teal)}
+.airport-name{font-size:0.65rem;color:var(--gray);max-width:90px}
+.flight-line{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
+.flight-line-bar{width:100%;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue));border-radius:2px;position:relative}
+.flight-line-bar::after{content:'✈️';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:1rem}
+.flight-duration{font-size:0.68rem;color:var(--gray);margin-top:8px}
+.flight-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.meta-item{background:#f8fafc;border-radius:8px;padding:8px;font-size:0.72rem}
+.meta-label{color:#94a3b8;font-weight:600;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.5px}
+.meta-value{font-weight:700;color:var(--text);margin-top:2px}
+.flight-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+
+/* LOCATION ITEMS */
+.loc-item{display:flex;gap:10px;padding:10px;background:#f8fafc;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;align-items:flex-start}
+.loc-icon{font-size:1.4rem;flex-shrink:0;width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
+.loc-content{flex:1;min-width:0}
+.loc-name{font-size:0.85rem;font-weight:700;line-height:1.2}
+.loc-desc{font-size:0.73rem;color:var(--gray);margin-top:2px;line-height:1.4}
+.loc-tags{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.tag{font-size:0.65rem;padding:2px 7px;border-radius:10px;font-weight:600;background:#e2e8f0;color:var(--gray)}
+.tag.green{background:#dcfce7;color:#15803d}
+.tag.blue{background:#dbeafe;color:#1d4ed8}
+.tag.orange{background:#ffedd5;color:#c2410c}
+.tag.purple{background:#ede9fe;color:#5b21b6}
+.tag.red{background:#fee2e2;color:#991b1b}
+.tag.yellow{background:#fefce8;color:#713f12}
+.tag.veg{background:#bbf7d0;color:#14532d;font-weight:800;border:1px solid #86efac}
+.veg-badge{display:inline-flex;align-items:center;gap:3px;background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:6px;padding:2px 7px;font-size:0.65rem;font-weight:800}
+.scooty-card{background:linear-gradient(135deg,#fff7ed,#ffedd5);border:1px solid #fed7aa;border-radius:12px;padding:12px;margin-bottom:8px}
+.scooty-card .sc-title{font-size:0.88rem;font-weight:800;color:#9a3412;display:flex;align-items:center;gap:6px}
+.scooty-card .sc-desc{font-size:0.75rem;color:#7c3d12;margin-top:4px;line-height:1.5}
+.scooty-card .sc-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.sc-meta-item{background:#fff;border-radius:6px;padding:6px 8px;font-size:0.7rem}
+.sc-meta-label{color:#94a3b8;font-size:0.6rem;font-weight:600;text-transform:uppercase}
+.sc-meta-value{font-weight:700;color:var(--text);margin-top:1px}
+.route-step{display:flex;gap:8px;padding:7px 0;border-bottom:1px dashed #fed7aa;font-size:0.75rem;align-items:flex-start}
+.route-step:last-child{border-bottom:none}
+.route-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.map-btn{display:inline-flex;align-items:center;gap:4px;background:var(--teal);color:#fff;padding:5px 10px;border-radius:6px;font-size:0.7rem;font-weight:700;text-decoration:none;transition:all 0.2s;flex-shrink:0;margin-top:6px}
+.map-btn:hover{background:#0f766e;transform:scale(1.02)}
+.map-btn-sm{display:inline-flex;align-items:center;gap:3px;background:#f1f5f9;color:var(--teal);border:1px solid var(--teal);padding:4px 8px;border-radius:6px;font-size:0.65rem;font-weight:700;text-decoration:none}
+
+/* DAY PLAN */
+.day-header-block{border-radius:12px;padding:12px;margin-bottom:4px;cursor:pointer;user-select:none}
+.day-header-block.north{background:linear-gradient(90deg,#dbeafe,#e0f2fe)}
+.day-header-block.south{background:linear-gradient(90deg,#dcfce7,#d1fae5)}
+.day-header-block.zuri{background:linear-gradient(90deg,#f3e8ff,#ede9fe)}
+.day-header-top{display:flex;justify-content:space-between;align-items:center}
+.day-date{font-size:0.95rem;font-weight:800}
+.day-hotel{font-size:0.7rem;opacity:0.75;margin-top:2px}
+.day-body{background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:12px;margin-bottom:12px;display:none}
+.day-body.open{display:block}
+.timeline-item{display:flex;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--border)}
+.timeline-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.time-pill{background:var(--teal);color:#fff;border-radius:6px;padding:3px 8px;font-size:0.65rem;font-weight:800;height:fit-content;white-space:nowrap;flex-shrink:0}
+.time-pill.orange{background:var(--orange)}
+.time-pill.purple{background:var(--purple)}
+.time-pill.blue{background:var(--blue)}
+.time-pill.red{background:var(--red)}
+.timeline-text{font-size:0.8rem;line-height:1.5}
+.timeline-text strong{color:var(--teal)}
+.timeline-map-link{display:inline-flex;align-items:center;gap:3px;color:var(--blue);font-size:0.7rem;font-weight:600;text-decoration:none;margin-top:4px}
+
+/* ALERTS */
+.alert{padding:10px 12px;border-radius:10px;margin-bottom:10px;border-left:4px solid;font-size:0.78rem;line-height:1.5}
+.alert-warn{background:var(--yellow-light);border-color:var(--yellow);color:#713f12}
+.alert-danger{background:var(--red-light);border-color:var(--red);color:#7f1d1d}
+.alert-success{background:var(--green-light);border-color:var(--green);color:#14532d}
+.alert-info{background:var(--blue-light);border-color:var(--blue);color:#1e3a8a}
+.alert-purple{background:var(--purple-light);border-color:var(--purple);color:#4c1d95}
+
+/* FOOD GRID */
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.food-card{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:10px;text-align:center}
+.food-emoji{font-size:1.6rem;display:block;margin-bottom:4px}
+.food-name{font-size:0.78rem;font-weight:700;color:#9a3412}
+.food-note{font-size:0.65rem;color:#7c3d12;margin-top:2px;line-height:1.3}
+
+/* DRINKS */
+.drink-card{background:linear-gradient(135deg,#faf5ff,#f3e8ff);border:1px solid #e9d5ff;border-radius:12px;padding:12px;margin-bottom:8px;display:flex;gap:10px}
+.drink-emoji{font-size:1.8rem;flex-shrink:0}
+.drink-name{font-size:0.85rem;font-weight:800;color:#4c1d95}
+.drink-desc{font-size:0.73rem;color:#6b21a8;margin-top:3px;line-height:1.4}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat-box{background:#fff;border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)}
+.stat-num{font-size:1.4rem;font-weight:900}
+.stat-label{font-size:0.6rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
+
+/* ACCORDION */
+.accordion-item{background:#fff;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;overflow:hidden}
+.accordion-header{padding:12px 14px;font-size:0.82rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.accordion-body{padding:0 14px 12px;font-size:0.78rem;line-height:1.6;display:none}
+.accordion-body.open{display:block}
+.chevron{transition:transform 0.2s;font-size:0.8rem;color:var(--gray)}
+.accordion-item.open .chevron{transform:rotate(180deg)}
+
+/* PACKING */
+.pack-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pack-item{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:0.75rem;display:flex;gap:6px;align-items:center}
+
+/* SCROLL INDICATOR */
+.scroll-hint{text-align:center;font-size:0.65rem;color:#94a3b8;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:4px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="app-header">
+  <span class="header-emoji">🌴✈️🌊</span>
+  <div class="header-title">Rutvik's Goa Trip</div>
+  <div class="header-sub">Jun 27 – Jul 5, 2026 &nbsp;·&nbsp; 9 Days &nbsp;·&nbsp; Monsoon Magic</div>
+  <div class="header-group">
+    <span class="passenger-chip">👤 Rutvik</span>
+    <span class="passenger-chip">👤 Chintan</span>
+    <span class="passenger-chip">👤 Alisha</span>
+    <span class="passenger-chip">👤 Ria</span>
+  </div>
+</div>
+
+<!-- WEB CHECK-IN BANNER -->
+<div id="checkinBanner" class="checkin-banner waiting" style="margin:12px 12px 0">
+  <div class="banner-icon" id="bannerIcon">⏳</div>
+  <div class="banner-text">
+    <div class="banner-title" id="bannerTitle">Outbound (6E 6345): Web check-in opens in...</div>
+    <div class="banner-sub" id="bannerSub">Opens 25 Jun, 04:15 pm IST</div>
+    <div class="countdown-timer" id="countdownTimer" style="color: rgb(29, 78, 216);">03:12:15</div>
+    <div class="banner-actions" id="bannerActions"><a href="https://www.flightradar24.com/data/flights/6e6345" target="_blank" class="action-btn btn-blue">📡 Track Flight</a></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-item active" onclick="showSection(&#39;home&#39;)">
+    <span class="nav-icon">🏠</span><span class="nav-label">Home</span>
+  </div>
+  <div class="nav-item" onclick="showSection(&#39;flights&#39;)">
+    <span class="nav-icon">✈️</span><span class="nav-label">Flights</span>
+  </div>
+  <div class="nav-item" onclick="showSection(&#39;itinerary&#39;)">
+    <span class="nav-icon">📅</span><span class="nav-label">Plan</span>
+  </div>
+  <div class="nav-item" onclick="showSection(&#39;places&#39;)">
+    <span class="nav-icon">📍</span><span class="nav-label">Places</span>
+  </div>
+  <div class="nav-item" onclick="showSection(&#39;fooddrinks&#39;)">
+    <span class="nav-icon">🍹</span><span class="nav-label">Food</span>
+  </div>
+  <div class="nav-item" onclick="showSection(&#39;tips&#39;)">
+    <span class="nav-icon">🛵</span><span class="nav-label">Tips</span>
+  </div>
+</div>
+
+<!-- ============ HOME ============ -->
+<div id="home" class="section active">
+
+  <div class="section-label">📊 Trip Overview</div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-num" style="color:#2563eb">5</div><div class="stat-label">Nights North</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#16a34a">4</div><div class="stat-label">Nights South</div></div>
+    <div class="stat-box"><div class="stat-num" style="color:#ea580c">4</div><div class="stat-label">Travellers</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏡 Your Accommodations</div>
+
+    <div class="loc-item" style="border-left:3px solid #2563eb">
+      <div class="loc-icon">🏖️</div>
+      <div class="loc-content">
+        <div class="loc-name">Candolim / Sinquerim, North Goa</div>
+        <div class="loc-desc">Jun 27 – Jul 1 (5 nights) · Near Fort Aguada · ~5 min to Calangute, 10 min to Baga</div>
+        <div><a href="https://www.google.com/maps?q=15.595931,73.751495" target="_blank" class="map-btn">📍 View on Maps</a></div>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🌿</div>
+      <div class="loc-content">
+        <div class="loc-name">Majestic Eco Comforts — Varca Beach</div>
+        <div class="loc-desc">Jul 2 (1 night) · 4-star eco resort · 4.5★ with 1,148 reviews</div>
+        <div><a href="https://www.google.com/maps/place/Majestic+Eco+Comforts/@15.2269245,73.9352515,17z" target="_blank" class="map-btn">📍 View on Maps</a></div>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">⭐</div>
+      <div class="loc-content">
+        <div class="loc-name">The Zuri White Sands Resort &amp; Casino</div>
+        <div class="loc-desc">Jul 3–5 (3 nights) · Varca Beach · 5-star luxury + Casino · 4.3★ with 8,443 reviews</div>
+        <div><a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="map-btn">📍 View on Maps</a></div>
+      </div>
+    </div>
+
+    <div class="alert alert-success" style="margin-top:4px">
+      🎉 <strong>Both South Goa hotels are on the same beach (Varca)!</strong> You can walk between them — no travel needed when you switch on Jul 2→3.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌧️ Monsoon Quick Facts</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:#f0fdf4;border-radius:8px;padding:10px;font-size:0.75rem">
+        <strong style="color:#15803d;display:block;margin-bottom:4px">✅ GREAT NOW</strong>
+        🟢 Prices 30–50% cheaper<br>
+        🟢 Lush green landscapes<br>
+        🟢 Empty peaceful beaches<br>
+        🟢 Waterfalls at peak<br>
+        🟢 Dudhsagar in full flow<br>
+        🟢 Backwater kayaking
+      </div>
+      <div style="background:#fef2f2;border-radius:8px;padding:10px;font-size:0.75rem">
+        <strong style="color:#dc2626;display:block;margin-bottom:4px">❌ AVOID / CLOSED</strong>
+        🔴 Sea swimming (dangerous)<br>
+        🔴 Anjuna Flea Market<br>
+        🔴 Dudhsagar Jeep Safari<br>
+        🔴 Open sea watersports<br>
+        🔴 Many beach shacks<br>
+        🔴 Scooters in heavy rain
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📅 Quick Itinerary</div>
+    <div style="font-size:0.78rem">
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#2563eb">Jun 27</span><span>✈️ Arrive GOI 17:55 · Candolim check-in · Dinner at Fisherman's Wharf</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#2563eb">Jun 28</span><span>🏰 Fort Aguada · Britto's lunch · Calangute market · LPK bar night</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#2563eb">Jun 29</span><span>🏰 Chapora Fort · Anand's seafood lunch · Anjuna village · Vagator</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#2563eb">Jun 30</span><span>💦 Dudhsagar Trek + Spice Farm + Mandovi cruise</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#2563eb">Jul 1</span><span>⛪ Old Goa · Panjim · Feni shopping · Mandovi cruise</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#16a34a">Jul 2</span><span>🚗 Drive south · Majestic Eco Comforts, Varca · Explore</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#7c3aed">Jul 3</span><span>⭐ Check into Zuri · Goa Chitra Museum · Casino night</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f1f5f9"><span style="font-weight:700;width:60px;flex-shrink:0;color:#7c3aed">Jul 4</span><span>🚣 Sal River kayak · Cavatina dinner · Zuri bar</span></div>
+      <div style="display:flex;gap:8px;padding:7px 0"><span style="font-weight:700;width:60px;flex-shrink:0;color:#7c3aed">Jul 5</span><span>✈️ Depart GOI 18:25 · Arrive AMD 20:10</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FLIGHTS ============ -->
+<div id="flights" class="section">
+
+  <div class="section-label">✈️ OUTBOUND FLIGHT</div>
+  <div class="flight-card">
+    <div class="flight-header outbound">
+      <div>
+        <div class="flight-num">✈️ IndiGo 6E 6345</div>
+        <div style="font-size:0.68rem;color:#1e40af;margin-top:2px">Sat, Jun 27, 2026 · Non-stop · 1h 40m</div>
+      </div>
+      <div class="pnr-badge" style="color:#1e40af">PNR: T5KE3V</div>
+    </div>
+    <div class="flight-body">
+      <div class="flight-route">
+        <div class="airport-box">
+          <div class="airport-code" style="color:#1d4ed8">AMD</div>
+          <div class="airport-time">16:15</div>
+          <div class="airport-name">Sardar Vallabhbhai Patel Intl, Terminal 1</div>
+        </div>
+        <div class="flight-line">
+          <div class="flight-line-bar"></div>
+          <div class="flight-duration">1h 40m · Direct</div>
+        </div>
+        <div class="airport-box">
+          <div class="airport-code" style="color:#0d9488">GOI</div>
+          <div class="airport-time">17:55</div>
+          <div class="airport-name">Goa South Dabolim Intl Airport</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <div class="meta-item"><div class="meta-label">Cabin Bag</div><div class="meta-value">7kg/person ×4</div></div>
+        <div class="meta-item"><div class="meta-label">Check-in Bag</div><div class="meta-value">15kg/person ×4</div></div>
+        <div class="meta-item"><div class="meta-label">Fare Type</div><div class="meta-value">Family Fare</div></div>
+        <div class="meta-item"><div class="meta-label">Total Paid</div><div class="meta-value">₹20,128</div></div>
+      </div>
+      <div class="flight-meta" style="margin-top:8px">
+        <div class="meta-item" style="grid-column:1/-1"><div class="meta-label">Passengers</div><div class="meta-value" style="font-size:0.8rem">Rutvik · Chintan · Alisha · Ria</div></div>
+      </div>
+      <div class="flight-actions">
+        <a href="https://www.goindigo.in/check-in.html" target="_blank" class="action-btn btn-green">🌐 Web Check-In</a>
+        <a href="https://www.flightradar24.com/data/flights/6e6345" target="_blank" class="action-btn btn-blue">📡 Track Flight</a>
+        <a href="https://flightaware.com/live/flight/IGO6345" target="_blank" class="action-btn btn-ghost">📊 FlightAware</a>
+      </div>
+      <div style="margin-top:10px">
+        <a href="https://www.google.com/maps?q=23.0732,72.6347" target="_blank" class="map-btn">📍 AMD Airport Map</a>
+        &nbsp;
+        <a href="https://www.google.com/maps?q=15.3808,73.8314" target="_blank" class="map-btn">📍 GOI Airport Map</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn" style="margin-bottom:12px">
+    🌐 <strong>Web check-in opens 48 hours before</strong> = <strong>Thu Jun 25 at 16:15 IST</strong>. Closes 60 min before departure. Check in early for better seat selection!
+  </div>
+
+  <div class="section-label">✈️ RETURN FLIGHT</div>
+  <div class="flight-card">
+    <div class="flight-header return">
+      <div>
+        <div class="flight-num">✈️ IndiGo 6E 381</div>
+        <div style="font-size:0.68rem;color:#15803d;margin-top:2px">Sun, Jul 5, 2026 · Non-stop · 1h 45m</div>
+      </div>
+      <div class="pnr-badge" style="color:#15803d">PNR: N7PTFP</div>
+    </div>
+    <div class="flight-body">
+      <div class="flight-route">
+        <div class="airport-box">
+          <div class="airport-code" style="color:#0d9488">GOI</div>
+          <div class="airport-time">18:25</div>
+          <div class="airport-name">Goa South Dabolim Intl Airport</div>
+        </div>
+        <div class="flight-line">
+          <div class="flight-line-bar"></div>
+          <div class="flight-duration">1h 45m · Direct</div>
+        </div>
+        <div class="airport-box">
+          <div class="airport-code" style="color:#1d4ed8">AMD</div>
+          <div class="airport-time">20:10</div>
+          <div class="airport-name">Sardar Vallabhbhai Patel Intl, Terminal 1</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <div class="meta-item"><div class="meta-label">Cabin Bag</div><div class="meta-value">7kg/person ×4</div></div>
+        <div class="meta-item"><div class="meta-label">Check-in Bag</div><div class="meta-value">15kg/person ×4</div></div>
+        <div class="meta-item"><div class="meta-label">Fare Type</div><div class="meta-value">Family Fare</div></div>
+        <div class="meta-item"><div class="meta-label">Total Paid</div><div class="meta-value">₹30,588</div></div>
+      </div>
+      <div class="flight-actions">
+        <a href="https://www.goindigo.in/check-in.html" target="_blank" class="action-btn btn-green">🌐 Web Check-In</a>
+        <a href="https://www.flightradar24.com/data/flights/6e381" target="_blank" class="action-btn btn-blue">📡 Track Flight</a>
+        <a href="https://flightaware.com/live/flight/IGO381" target="_blank" class="action-btn btn-ghost">📊 FlightAware</a>
+      </div>
+      <div style="margin-top:10px">
+        <a href="https://www.google.com/maps?q=15.3808,73.8314" target="_blank" class="map-btn">📍 GOI Airport Map</a>
+        &nbsp;
+        <a href="https://www.google.com/maps?q=23.0732,72.6347" target="_blank" class="map-btn">📍 AMD Airport Map</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    🌐 <strong>Return web check-in opens</strong> = <strong>Fri Jul 3 at 18:25 IST</strong> (48 hrs before). Don't forget — you'll be at the Zuri Casino that evening! Set a reminder.
+  </div>
+
+  <div class="card">
+    <div class="card-title">🧳 Baggage Rules — All 4 Passengers</div>
+    <div style="font-size:0.8rem;line-height:1.8">
+      ✅ <strong>Cabin baggage:</strong> 7 kg max, 1 piece per person<br>
+      ✅ <strong>Check-in baggage:</strong> 15 kg max, 1 piece per person<br>
+      📏 Cabin bag max dimensions: 55×35×25 cm<br>
+      🆔 Carry Aadhaar / Driving licence / Passport<br>
+      ⚡ Power banks: <strong>only in cabin bag</strong> (not check-in)<br>
+      🔋 Lithium batteries: cabin bag only<br>
+      🚫 E-cigarettes, lighters: NOT allowed<br>
+      📲 Use <strong>DigiYatra app</strong> for face-scan check-in at airport
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📞 Airline Contacts</div>
+    <div style="font-size:0.82rem;line-height:1.8">
+      <strong>IndiGo:</strong> 0124-6173838 / 0124-4973838<br>
+      <strong>MakeMy Trip:</strong> 0124-4628747<br>
+      <strong>Booking ID (outbound):</strong> NF2ALDMQ64329732621<br>
+      <strong>Booking ID (return):</strong> NF2ALDNC96615613007<br>
+      <strong>Trip Secure Insurance:</strong> Purchased ✅
+    </div>
+  </div>
+</div>
+
+<!-- ============ ITINERARY ============ -->
+<div id="itinerary" class="section">
+  <div class="scroll-hint">👆 Tap any day to expand</div>
+
+  <!-- Day 1 -->
+  <div class="day-header-block north" onclick="toggleDay(&#39;d1&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">✈️ Sat, Jun 27 — Arrival Day</div>
+        <div class="day-hotel">🏖️ Candolim / Sinquerim, North Goa</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d1" class="day-body">
+    <div class="timeline-item">
+      <span class="time-pill blue">DEPART</span>
+      <div class="timeline-text">✈️ <strong>IndiGo 6E 6345</strong> departs AMD at <strong>16:15</strong>. Be at airport by <strong>14:00</strong>. Terminal 1, Sardar Vallabhbhai Patel Intl.<br><a href="https://www.google.com/maps?q=23.0732,72.6347" target="_blank" class="timeline-map-link">📍 AMD Airport →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">ARRIVE</span>
+      <div class="timeline-text">🛬 Land at <strong>GOI (Dabolim) at 17:55</strong>. Pre-book a cab from airport to Candolim (~45 min, ~₹800–1,000). Don't use random taxis — book via app or hotel pickup.<br><a href="https://www.google.com/maps?q=15.3808,73.8314" target="_blank" class="timeline-map-link">📍 Dabolim Airport →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EVENING</span>
+      <div class="timeline-text">🏰 Quick visit to <strong>Fort Aguada</strong> — 5 min from your hotel. Dramatic monsoon waves crashing below. Sunset views. Free entry.<br><a href="https://www.google.com/maps?q=Fort+Aguada+Sinquerim+Goa" target="_blank" class="timeline-map-link">📍 Fort Aguada →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">DINNER</span>
+      <div class="timeline-text">🐟 <strong>Fisherman's Wharf, Candolim</strong> — Best first-night dinner. Open 24 hrs. Has both <strong>veg &amp; non-veg</strong> options — great mushroom xacuti, veg cafreal, coconut curries for veg folk. Fish curry rice for non-veg. ~₹800–1,500/person.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Fisherman%27s+Wharf+Candolim+Goa" target="_blank" class="timeline-map-link">📍 Fisherman's Wharf →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">NIGHT</span>
+      <div class="timeline-text">🛒 If not too tired, stop at <strong>Tom's Wine Shop</strong> for your first bottle of Feni. Try Cashew Feni neat to understand the taste. Rest up!<br><a href="https://www.google.com/maps/search/?api=1&amp;query=wine+shop+Candolim+Goa" target="_blank" class="timeline-map-link">📍 Wine Shops →</a></div>
+    </div>
+    <div class="timeline-item" style="background:#fff7ed;border-radius:8px;padding:8px;border:none">
+      <span class="time-pill orange">🛵 NOTE</span>
+      <div class="timeline-text">Don't try to rent a scooty tonight — it's 7pm+ and wet. <strong>Lobo Rentals</strong> is 5 min from your hotel on Nerul-Candolim Road. Go there first thing tomorrow morning (8am) for the best bikes. Call ahead: <strong>+91 98221 42601</strong></div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-header-block north" onclick="toggleDay(&#39;d2&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">🏰 Sun, Jun 28 — Forts &amp; Beaches</div>
+        <div class="day-hotel">🏖️ Candolim / Sinquerim, North Goa</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d2" class="day-body">
+    <div class="timeline-item" style="background:#fff7ed;border-radius:8px;padding:8px;border:none">
+      <span class="time-pill orange">8:00 AM 🛵</span>
+      <div class="timeline-text"><strong>Rent your scooty FIRST!</strong> Head to <strong>Lobo Car &amp; Bike Rentals</strong> (5 min from hotel, Nerul-Candolim Road). Rent 2× Activa/Dio for the group (~₹400–500/bike/day). Inspect bikes, take photos, get helmets. Ask for 4-day rate to save money.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Lobo+Car+Rentals+Candolim+Goa" target="_blank" class="timeline-map-link">📍 Lobo Rentals →</a> &nbsp;<a href="tel:+919822142601" class="timeline-map-link" style="color:#16a34a">📞 +91 98221 42601</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">🌊 First ride on the scooty! Head to <strong>Baga Beach</strong> — dramatic monsoon waves, empty beach. No swimming! Just vibes. Grab chai from a roadside stall. Park near the beach road.<br><a href="https://www.google.com/maps?q=Baga+Beach+Goa" target="_blank" class="timeline-map-link">📍 Baga Beach →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">LUNCH</span>
+      <div class="timeline-text">🦐 <strong>Britto's, Baga</strong> — iconic beachfront restaurant. Order: Crab Xacuti, Fish Curry Rice, Sol Kadhi. The classic Goa lunch experience.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Britto%27s+Restaurant+Baga+Goa" target="_blank" class="timeline-map-link">📍 Britto's →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">AFTNOON</span>
+      <div class="timeline-text">🛍️ <strong>Calangute Market</strong> — clothing, handicrafts, spices, cashews. Bargain hard (off-season = more flexible pricing). Buy Goan cashews to take home.<br><a href="https://www.google.com/maps?q=Calangute+Market+Goa" target="_blank" class="timeline-map-link">📍 Calangute Market →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EVENING</span>
+      <div class="timeline-text">☕ Drinks at <strong>Flying Dolphin Beach Café, Calangute</strong> — tapas and sunset cocktails with sea view. Or try <strong>A Reverie</strong> for upscale European dinner.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Flying+Dolphin+Calangute+Goa" target="_blank" class="timeline-map-link">📍 Flying Dolphin →</a> &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=A+Reverie+Calangute+Goa" target="_blank" class="timeline-map-link">📍 A Reverie →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">NIGHT</span>
+      <div class="timeline-text">❤️ <strong>LPK (Love Passion Karma)</strong> — waterfront club on Nerul River. Surrounded by water, heritage vibe, magical in monsoon. Or <strong>Club Titos</strong> for full-on party.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=LPK+Love+Passion+Karma+Goa" target="_blank" class="timeline-map-link">📍 LPK →</a> &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=Club+Titos+Baga+Goa" target="_blank" class="timeline-map-link">📍 Club Titos →</a></div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-header-block north" onclick="toggleDay(&#39;d3&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">🌊 Mon, Jun 29 — Chapora + Seafood</div>
+        <div class="day-hotel">🏖️ Candolim / Sinquerim, North Goa</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d3" class="day-body">
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">🏰 <strong>Chapora Fort</strong> (the Dil Chahta Hai fort!) — 30 min drive. Panoramic views over Vagator Beach + Arabian Sea. Lush and misty in monsoon. Zero entry fee.<br><a href="https://www.google.com/maps?q=Chapora+Fort+Vagator+Goa" target="_blank" class="timeline-map-link">📍 Chapora Fort →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">LUNCH</span>
+      <div class="timeline-text">🐟 <strong>Anand Bar &amp; Restaurant, Siolim</strong> — THE local seafood spot. Best fish thali in North Goa. Super cheap ~₹250. Order: Mackerel Recheado or Pomfret Fry. Eat where the locals eat!<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Anand+Bar+Restaurant+Siolim+Goa" target="_blank" class="timeline-map-link">📍 Anand's →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">AFTNOON</span>
+      <div class="timeline-text">☕ <strong>Anjuna Village</strong> — quirky cafés, boutique shops. Visit <strong>Artjuna Garden Café</strong> for coffee in a beautiful garden setting. Walk the lanes.<br><a href="https://www.google.com/maps?q=Anjuna+Village+Goa" target="_blank" class="timeline-map-link">📍 Anjuna →</a> &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=Artjuna+Cafe+Anjuna+Goa" target="_blank" class="timeline-map-link">📍 Artjuna Café →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EVENING</span>
+      <div class="timeline-text">🌊 <strong>Vagator Beach</strong> — spectacular red laterite cliffs with crashing monsoon waves. Best for photography. Walk down to Little Vagator / Ozran Beach cove.<br><a href="https://www.google.com/maps?q=Vagator+Beach+Goa" target="_blank" class="timeline-map-link">📍 Vagator Beach →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">DINNER</span>
+      <div class="timeline-text">✨ <strong>Hosa Restaurant, Siolim</strong> — award-winning inside a Portuguese villa. Creative Goan cuisine. Or splurge at <strong>A Reverie</strong> if you didn't go yesterday.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Hosa+Restaurant+Siolim+Goa" target="_blank" class="timeline-map-link">📍 Hosa Siolim →</a></div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-header-block north" onclick="toggleDay(&#39;d4&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">💦 Tue, Jun 30 — Dudhsagar + Spice Farm</div>
+        <div class="day-hotel">🏖️ Candolim / Sinquerim, North Goa</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d4" class="day-body">
+    <div class="alert alert-warn">⚠️ LONG DAY — leave by 7am. Book trek in advance via GTDC portal. Check weather the night before.</div>
+    <div class="timeline-item">
+      <span class="time-pill">07:00 AM</span>
+      <div class="timeline-text">💦 <strong>Dudhsagar Falls Trek</strong> — 3–4 hr drive, 10–12 km trek. 300m waterfall at PEAK FLOW in July. Guided trek only (jeep safari closed). Spectacular jungle experience. Pack rain gear, water, snacks.<br><a href="https://www.google.com/maps?q=Dudhsagar+Waterfall+Goa" target="_blank" class="timeline-map-link">📍 Dudhsagar Falls →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">AFTNOON</span>
+      <div class="timeline-text">🌿 Stop at <strong>Sahakari Spice Farm, Ponda</strong> on way back. Guided tour through nutmeg, cardamom, vanilla plantations. Complimentary Goan lunch included! Buy fresh spices.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Sahakari+Spice+Farm+Ponda+Goa" target="_blank" class="timeline-map-link">📍 Sahakari Spice Farm →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">EVENING</span>
+      <div class="timeline-text">😴 Rest and recover! Order dinner at <strong>Fisherman's Wharf</strong> (open 24hrs) or get delivery. You've earned it after Dudhsagar!</div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-header-block north" onclick="toggleDay(&#39;d5&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">⛪ Wed, Jul 1 — Old Goa + Panjim</div>
+        <div class="day-hotel">🏖️ Candolim / Sinquerim, North Goa</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d5" class="day-body">
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">⛪ <strong>Old Goa UNESCO Churches</strong> — Basilica of Bom Jesus (St. Francis Xavier's preserved remains) + Sé Cathedral (largest church in Asia). Free entry. 30 min drive.<br><a href="https://www.google.com/maps?q=Basilica+of+Bom+Jesus+Old+Goa" target="_blank" class="timeline-map-link">📍 Bom Jesus →</a> &nbsp;<a href="https://www.google.com/maps?q=Se+Cathedral+Old+Goa" target="_blank" class="timeline-map-link">📍 Sé Cathedral →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">LUNCH</span>
+      <div class="timeline-text">🍛 <strong>Panjim (Panaji)</strong> — explore the <strong>Latin Quarter (Fontainhas)</strong>, Goa's most beautiful heritage neighbourhood. Colorful Portuguese houses. Lunch at <strong>Viva Panjim</strong>.<br><a href="https://www.google.com/maps?q=Fontainhas+Latin+Quarter+Panjim+Goa" target="_blank" class="timeline-map-link">📍 Fontainhas →</a> &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=Viva+Panjim+Restaurant" target="_blank" class="timeline-map-link">📍 Viva Panjim →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">AFTNOON</span>
+      <div class="timeline-text">🛒 <strong>Feni shopping at Magsons Supermarket, Panjim</strong> — Best selection. Buy: Cazulo Feni, Big Boss Feni, bebinca, Goan pickles, spice mixes. Also pick up cashews.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Magsons+Supermarket+Panjim+Goa" target="_blank" class="timeline-map-link">📍 Magsons Panjim →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EVENING</span>
+      <div class="timeline-text">🚢 <strong>Mandovi River Cruise</strong> — departs from Panjim Jetty, ~6pm. 1-hour cruise with Goan folk music + dance. ~₹400–500/person. Book on-spot. Magical even in monsoon light.<br><a href="https://www.google.com/maps?q=Panjim+Jetty+Goa" target="_blank" class="timeline-map-link">📍 Panjim Jetty →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">DINNER</span>
+      <div class="timeline-text">🍛 <strong>Ritz Classic, Panjim</strong> — famous for Goan thali. Authentic local restaurant. Then drive back to Candolim for last night!<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Ritz+Classic+Panjim+Goa" target="_blank" class="timeline-map-link">📍 Ritz Classic →</a></div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-header-block south" onclick="toggleDay(&#39;d6&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">🚗 Thu, Jul 2 — Move to South Goa</div>
+        <div class="day-hotel">🌿 Majestic Eco Comforts, Varca Beach</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d6" class="day-body">
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">🚗 Check out, pack up. Drive south (~1.5 hrs). Book a private cab (~₹2,500). Enjoy monsoon scenery — Goa's interior is an incredible green!<br><a href="https://www.google.com/maps/dir/Candolim+Goa/Majestic+Eco+Comforts+Varca" target="_blank" class="timeline-map-link">📍 Route: Candolim → Varca →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EN ROUTE</span>
+      <div class="timeline-text">🛒 Stop at <strong>Margao Municipal Market</strong> — South Goa's largest. Fresh produce, spices, local snacks. Great for experiencing local life. Then lunch at a local restaurant.<br><a href="https://www.google.com/maps?q=Margao+Municipal+Market+Goa" target="_blank" class="timeline-map-link">📍 Margao Market →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">AFTNOON</span>
+      <div class="timeline-text">✅ Check into <strong>Majestic Eco Comforts, Varca</strong>. Explore the eco property. Walk to Varca Beach — long, wide, completely empty in monsoon. Beautiful and peaceful.<br><a href="https://www.google.com/maps/place/Majestic+Eco+Comforts/@15.2269245,73.9352515,17z" target="_blank" class="timeline-map-link">📍 Majestic Eco Comforts →</a> &nbsp;<a href="https://www.google.com/maps?q=Varca+Beach+Goa" target="_blank" class="timeline-map-link">📍 Varca Beach →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">DINNER</span>
+      <div class="timeline-text">🐟 <strong>Fisherman's Wharf, Cavelossim</strong> — 10 min from hotel. Order: prawns, fish curry rice, bebinca for dessert. Consistent quality.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Fisherman%27s+Wharf+Cavelossim+Goa" target="_blank" class="timeline-map-link">📍 Fisherman's Wharf South →</a></div>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-header-block zuri" onclick="toggleDay(&#39;d7&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">⭐ Fri, Jul 3 — Check into Zuri + Casino</div>
+        <div class="day-hotel">🎰 The Zuri White Sands, Varca Beach</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d7" class="day-body">
+    <div class="alert alert-info">⏰ Return web check-in opens at <strong>18:25 tonight</strong>! Remember to check in after dinner.</div>
+    <div class="timeline-item">
+      <span class="time-pill purple">MORNING</span>
+      <div class="timeline-text">🎒 Short walk/cab to check into <strong>Zuri White Sands</strong>. Same beach as Majestic Eco — literally 5 min walk! Enjoy the 5-star facilities, pool, beach access.<br><a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="timeline-map-link">📍 The Zuri White Sands →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">AFTNOON</span>
+      <div class="timeline-text">🏛️ <strong>Goa Chitra Museum, Benaulim</strong> — 4,000+ traditional Goan artifacts on an organic farm. Fascinating cultural experience. ~20 min from Varca. ₹200 entry.<br><a href="https://www.google.com/maps?q=Goa+Chitra+Museum+Benaulim" target="_blank" class="timeline-map-link">📍 Goa Chitra Museum →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">SUNSET</span>
+      <div class="timeline-text">🌅 <strong>The Southern Deck, Benaulim</strong> — jaw-dropping sea views. Best sunset spot in South Goa. Great cocktails. Order bebinca for dessert.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Southern+Deck+Benaulim+Goa" target="_blank" class="timeline-map-link">📍 Southern Deck →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">NIGHT</span>
+      <div class="timeline-text">🎰 <strong>Zuri Casino</strong> — right in your hotel! Dress smart. Try blackjack, roulette, poker. Complimentary drinks for players. Great monsoon night activity! Also — <strong>do your return web check-in tonight!</strong></div>
+    </div>
+  </div>
+
+  <!-- Day 8 -->
+  <div class="day-header-block zuri" onclick="toggleDay(&#39;d8&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">🚣 Sat, Jul 4 — Kayaking + Fine Dining</div>
+        <div class="day-hotel">⭐ The Zuri White Sands, Varca Beach</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d8" class="day-body">
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">🚣 <strong>Sal River Kayaking</strong> — paddle through mangroves on the monsoon-full Sal River. Book via hotel or local operator in Cavelossim. ~1.5–2 hrs, incredible experience.<br><a href="https://www.google.com/maps?q=Sal+River+Cavelossim+Goa" target="_blank" class="timeline-map-link">📍 Sal River →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">LUNCH</span>
+      <div class="timeline-text">👨‍🍳 <strong>Cavatina, Benaulim</strong> — Chef Avinash Martins' restaurant. <strong>Book in advance!</strong> Best restaurant in South Goa. Modern Goan cuisine. ~₹1,500–2,500/person. A destination meal.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Cavatina+Restaurant+Benaulim+Goa" target="_blank" class="timeline-map-link">📍 Cavatina →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">AFTNOON</span>
+      <div class="timeline-text">🏖️ <strong>Benaulim Beach</strong> — South Goa's longest stretch. Very peaceful. Walk, collect shells, watch fishermen. Much calmer than North Goa in monsoon.<br><a href="https://www.google.com/maps?q=Benaulim+Beach+Goa" target="_blank" class="timeline-map-link">📍 Benaulim Beach →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">EVENING</span>
+      <div class="timeline-text">🍣 <strong>The Red Ginger, Benaulim</strong> — Japanese/Thai/Malaysian fusion. Sushi, ramen. A nice change from Goan food! Or <strong>Bullion Bar</strong> for seafood sundowner.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Red+Ginger+Benaulim+Goa" target="_blank" class="timeline-map-link">📍 Red Ginger →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill purple">NIGHT</span>
+      <div class="timeline-text">🍹 Night cap at <strong>Zuri's bar</strong>. Rain sounds, warm resort lighting = perfect monsoon evening. Pack smart for tomorrow's early check-out!</div>
+    </div>
+  </div>
+
+  <!-- Day 9 -->
+  <div class="day-header-block zuri" onclick="toggleDay(&#39;d9&#39;)">
+    <div class="day-header-top">
+      <div>
+        <div class="day-date">✈️ Sun, Jul 5 — Departure Day</div>
+        <div class="day-hotel">🛫 GOI 18:25 → AMD 20:10</div>
+      </div>
+      <span>▼</span>
+    </div>
+  </div>
+  <div id="d9" class="day-body">
+    <div class="alert alert-info">✈️ Flight: <strong>6E 381</strong> departs GOI at <strong>18:25</strong>. Reach airport by <strong>16:15</strong> (2 hrs before). It's ~45 min from Varca → Dabolim.</div>
+    <div class="timeline-item">
+      <span class="time-pill">MORNING</span>
+      <div class="timeline-text">☕ Leisurely last breakfast at Zuri (include buffet if available). Last pool dip. Pack up. Check out by noon.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">OPTION A</span>
+      <div class="timeline-text">🏖️ Drive to <strong>Palolem Beach</strong> (~1 hr south). Crescent bay, calmer in monsoon. Lunch at <strong>Ciarans</strong> — crepes, fried fish, killer cocktails. Back by 15:00.<br><a href="https://www.google.com/maps?q=Palolem+Beach+Goa" target="_blank" class="timeline-map-link">📍 Palolem Beach →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill orange">OPTION B</span>
+      <div class="timeline-text">🛍️ Head to <strong>Panjim</strong> for final shopping — Feni, cashews, bebinca, Goan pickles. Last Goan meal. Drive to airport.<br><a href="https://www.google.com/maps?q=Panjim+Market+Goa" target="_blank" class="timeline-map-link">📍 Panjim →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill blue">16:15</span>
+      <div class="timeline-text">🛬 <strong>Arrive Dabolim Airport</strong> — check in, drop bags. IndiGo 6E 381 departs 18:25.<br><a href="https://www.google.com/maps?q=15.3808,73.8314" target="_blank" class="timeline-map-link">📍 GOI Airport →</a></div>
+    </div>
+    <div class="timeline-item">
+      <span class="time-pill">20:10</span>
+      <div class="timeline-text">🏠 Land at <strong>AMD 20:10</strong>. Welcome back — with Feni, spices, memories, and a tan. 🌴</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ PLACES ============ -->
+<div id="places" class="section">
+
+  <div class="section-label" style="margin-top:4px">🏖️ NORTH GOA PLACES</div>
+
+  <div class="card" style="padding:10px">
+    <div class="loc-item" style="border-left:3px solid #2563eb">
+      <div class="loc-icon">🏰</div>
+      <div class="loc-content">
+        <div class="loc-name">Fort Aguada</div>
+        <div class="loc-desc">17th-century Portuguese fort. 5 min from your hotel. Panoramic Arabian Sea views. Dramatic monsoon waves. Free entry.</div>
+        <div class="loc-tags"><span class="tag green">Free entry</span><span class="tag blue">5 min away</span><span class="tag">📸 Photos</span></div>
+        <a href="https://www.google.com/maps?q=Fort+Aguada+Sinquerim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #2563eb">
+      <div class="loc-icon">🏰</div>
+      <div class="loc-content">
+        <div class="loc-name">Chapora Fort — "Dil Chahta Hai" Fort</div>
+        <div class="loc-desc">Iconic fort over Vagator Beach. 30 min drive. Misty and cinematic in monsoon. Must see.</div>
+        <div class="loc-tags"><span class="tag green">Free entry</span><span class="tag blue">30 min drive</span><span class="tag">🎬 Iconic</span></div>
+        <a href="https://www.google.com/maps?q=Chapora+Fort+Vagator+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #0891b2">
+      <div class="loc-icon">🌊</div>
+      <div class="loc-content">
+        <div class="loc-name">Vagator / Ozran Beach</div>
+        <div class="loc-desc">Red laterite cliffs + dramatic coves. Perfect monsoon photography. No swimming but incredible walks.</div>
+        <div class="loc-tags"><span class="tag">📸 Photography</span><span class="tag blue">30 min</span><span class="tag red">No swimming</span></div>
+        <a href="https://www.google.com/maps?q=Vagator+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #0891b2">
+      <div class="loc-icon">🌊</div>
+      <div class="loc-content">
+        <div class="loc-name">Baga Beach</div>
+        <div class="loc-desc">10 min from your stay. Empty in monsoon, dramatic waves. Britto's restaurant is here.</div>
+        <div class="loc-tags"><span class="tag red">No swimming</span><span class="tag blue">10 min</span></div>
+        <a href="https://www.google.com/maps?q=Baga+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">⛪</div>
+      <div class="loc-content">
+        <div class="loc-name">Old Goa — Basilica of Bom Jesus</div>
+        <div class="loc-desc">UNESCO heritage. St. Francis Xavier's remains. The most important church in Goa. 30 min drive.</div>
+        <div class="loc-tags"><span class="tag green">Free entry</span><span class="tag">🏛️ UNESCO</span><span class="tag blue">30 min</span></div>
+        <a href="https://www.google.com/maps?q=Basilica+of+Bom+Jesus+Old+Goa" target="_blank" class="map-btn">📍 Bom Jesus</a>
+        &nbsp;<a href="https://www.google.com/maps?q=Se+Cathedral+Old+Goa" target="_blank" class="map-btn">📍 Sé Cathedral</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">🏛️</div>
+      <div class="loc-content">
+        <div class="loc-name">Panjim — Fontainhas Latin Quarter</div>
+        <div class="loc-desc">Goa's capital. Most beautiful heritage neighbourhood. Colorful Portuguese-era houses, artsy lanes.</div>
+        <div class="loc-tags"><span class="tag green">Free walk</span><span class="tag blue">30 min</span></div>
+        <a href="https://www.google.com/maps?q=Fontainhas+Latin+Quarter+Panjim+Goa" target="_blank" class="map-btn">📍 Fontainhas</a>
+        &nbsp;<a href="https://www.google.com/maps?q=Panjim+Jetty+Mandovi+River+Goa" target="_blank" class="map-btn">📍 Panjim Jetty</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #ea580c">
+      <div class="loc-icon">💦</div>
+      <div class="loc-content">
+        <div class="loc-name">Dudhsagar Waterfall — Full-Day Trip</div>
+        <div class="loc-desc">300m waterfall at PEAK FLOW in July! Guided trek (jeep safari closed). Book via GTDC portal. Check forecast morning of.</div>
+        <div class="loc-tags"><span class="tag orange">Full day</span><span class="tag yellow">Book ahead</span><span class="tag green">Peak season</span></div>
+        <a href="https://www.google.com/maps?q=Dudhsagar+Waterfall+Mollem+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #ea580c">
+      <div class="loc-icon">🌿</div>
+      <div class="loc-content">
+        <div class="loc-name">Sahakari Spice Farm — Ponda</div>
+        <div class="loc-desc">Guided spice tour + complimentary Goan lunch. Buy vanilla, cardamom, nutmeg. ~45 min from Goa city.</div>
+        <div class="loc-tags"><span class="tag orange">₹600/person</span><span class="tag green">Lunch included</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Sahakari+Spice+Farm+Ponda+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🌿 SOUTH GOA PLACES</div>
+
+  <div class="card" style="padding:10px">
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🏖️</div>
+      <div class="loc-content">
+        <div class="loc-name">Varca Beach — Your Beach!</div>
+        <div class="loc-desc">Long, wide, empty beach in monsoon. Calm vibe. Both your hotels are right on this beach.</div>
+        <div class="loc-tags"><span class="tag green">Your hotel beach</span><span class="tag red">No swimming</span></div>
+        <a href="https://www.google.com/maps?q=Varca+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🏖️</div>
+      <div class="loc-content">
+        <div class="loc-name">Benaulim Beach</div>
+        <div class="loc-desc">South Goa's longest stretch. Peaceful, great for walks. Several good restaurants on the beach road. 20 min from Varca.</div>
+        <div class="loc-tags"><span class="tag green">Calm</span><span class="tag blue">20 min</span></div>
+        <a href="https://www.google.com/maps?q=Benaulim+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #0891b2">
+      <div class="loc-icon">🚣</div>
+      <div class="loc-content">
+        <div class="loc-name">Sal River — Kayaking Through Mangroves</div>
+        <div class="loc-desc">Paddle through lush mangroves. Perfect monsoon activity. Book near Cavelossim. 1.5–2 hrs.</div>
+        <div class="loc-tags"><span class="tag blue">Monsoon perfect</span><span class="tag orange">₹800–1,500</span></div>
+        <a href="https://www.google.com/maps?q=Sal+River+Cavelossim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">🏛️</div>
+      <div class="loc-content">
+        <div class="loc-name">Goa Chitra Museum — Benaulim</div>
+        <div class="loc-desc">4,000+ Goan artifacts on an organic farm. Fascinating ethnographic museum. ₹200 entry. ~20 min from Varca.</div>
+        <div class="loc-tags"><span class="tag">🌧️ Monsoon friendly</span><span class="tag blue">20 min</span><span class="tag orange">₹200</span></div>
+        <a href="https://www.google.com/maps?q=Goa+Chitra+Museum+Benaulim" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #0891b2">
+      <div class="loc-icon">🏖️</div>
+      <div class="loc-content">
+        <div class="loc-name">Cola Beach (Khola Beach) — Hidden Gem</div>
+        <div class="loc-desc">Secret lagoon separated from sea by sandbar. Kayaking in calm water. Spectacular monsoon scenery. ~1 hr from Varca.</div>
+        <div class="loc-tags"><span class="tag green">Hidden gem</span><span class="tag blue">1 hr drive</span></div>
+        <a href="https://www.google.com/maps?q=Cola+Beach+Agonda+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #0891b2">
+      <div class="loc-icon">🏖️</div>
+      <div class="loc-content">
+        <div class="loc-name">Palolem Beach</div>
+        <div class="loc-desc">Crescent bay 1 hr south. Calmer than North Goa in monsoon. Natural protection from currents. Has dolphin tours, restaurants.</div>
+        <div class="loc-tags"><span class="tag blue">1 hr south</span><span class="tag green">Calmer beach</span></div>
+        <a href="https://www.google.com/maps?q=Palolem+Beach+Canacona+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">🏛️</div>
+      <div class="loc-content">
+        <div class="loc-name">Chandor Heritage Mansions</div>
+        <div class="loc-desc">Portuguese-era Braganza House. Preserved 17th-century interiors. Unique history. ~40 min from Varca.</div>
+        <div class="loc-tags"><span class="tag">🌧️ Monsoon friendly</span><span class="tag blue">40 min</span></div>
+        <a href="https://www.google.com/maps?q=Braganza+House+Chandor+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🍽️ NORTH GOA RESTAURANTS</div>
+  <div class="card" style="padding:10px">
+    <div class="loc-item">
+      <div class="loc-icon">🐟</div>
+      <div class="loc-content">
+        <div class="loc-name">Fisherman's Wharf — Candolim</div>
+        <div class="loc-desc">Legendary Goan seafood. Open 24 hrs. Fish curry rice, prawn xacuti, crab. Your go-to restaurant all week.</div>
+        <div class="loc-tags"><span class="tag green">Open 24hrs</span><span class="tag blue">Near your stay</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Fisherman%27s+Wharf+Candolim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🦐</div>
+      <div class="loc-content">
+        <div class="loc-name">Britto's — Baga Beach</div>
+        <div class="loc-desc">Iconic landmark. Crab xacuti, fish curry, prawn balchão. Great for all meals.</div>
+        <div class="loc-tags"><span class="tag">⭐ Iconic</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Britto%27s+Restaurant+Baga+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🐟</div>
+      <div class="loc-content">
+        <div class="loc-name">Anand Bar &amp; Restaurant — Siolim</div>
+        <div class="loc-desc">THE local secret. Best fish thali. Humble no-frills. ~₹250/person. Where Goans eat. Don't miss!</div>
+        <div class="loc-tags"><span class="tag green">Local gem</span><span class="tag">💰 Budget</span><span class="tag yellow">Must try</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Anand+Bar+Restaurant+Siolim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">✨</div>
+      <div class="loc-content">
+        <div class="loc-name">A Reverie — Calangute</div>
+        <div class="loc-desc">Modern European cuisine. Beautiful setting. Best for a special dinner.</div>
+        <div class="loc-tags"><span class="tag purple">Fine dining</span><span class="tag">💰💰 Premium</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=A+Reverie+Calangute+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🏛️</div>
+      <div class="loc-content">
+        <div class="loc-name">Hosa — Siolim Village</div>
+        <div class="loc-desc">Award-winning. Inside a Portuguese villa. Creative Goan cuisine.</div>
+        <div class="loc-tags"><span class="tag purple">Award-winning</span><span class="tag">💰💰 Premium</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Hosa+Restaurant+Siolim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🍽️ SOUTH GOA RESTAURANTS</div>
+  <div class="card" style="padding:10px">
+    <div class="loc-item">
+      <div class="loc-icon">👨‍🍳</div>
+      <div class="loc-content">
+        <div class="loc-name">Cavatina — Benaulim ⭐ BOOK AHEAD</div>
+        <div class="loc-desc">Chef Avinash Martins. Best restaurant in South Goa. Modern Goan. Book in advance! ~₹2,000/person.</div>
+        <div class="loc-tags"><span class="tag yellow">Book in advance!</span><span class="tag purple">Fine dining</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Cavatina+Restaurant+Benaulim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🌅</div>
+      <div class="loc-content">
+        <div class="loc-name">The Southern Deck — Benaulim Beach</div>
+        <div class="loc-desc">Jaw-dropping views. Best sunset dinner spot in South Goa. Cosy swings, great cocktails.</div>
+        <div class="loc-tags"><span class="tag">🌅 Sunset views</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Southern+Deck+Benaulim+Beach+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🍣</div>
+      <div class="loc-content">
+        <div class="loc-name">The Red Ginger — Benaulim</div>
+        <div class="loc-desc">Japanese/Thai/Malaysian fusion. Sushi, ramen. Great change from Goan food.</div>
+        <div class="loc-tags"><span class="tag blue">Asian fusion</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Red+Ginger+Benaulim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🐟</div>
+      <div class="loc-content">
+        <div class="loc-name">Fisherman's Wharf — Cavelossim</div>
+        <div class="loc-desc">South Goa branch of the legend. Consistent, great seafood. 10 min from Varca.</div>
+        <div class="loc-tags"><span class="tag blue">Near Varca</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Fisherman%27s+Wharf+Cavelossim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🍸 BARS &amp; NIGHTLIFE</div>
+  <div class="card" style="padding:10px">
+    <div class="loc-item">
+      <div class="loc-icon">❤️</div>
+      <div class="loc-content">
+        <div class="loc-name">LPK — Love Passion Karma, Nerul</div>
+        <div class="loc-desc">Waterfront club on Nerul River. Surrounded by water. Heritage feel. Magical monsoon atmosphere.</div>
+        <div class="loc-tags"><span class="tag blue">Waterfront</span><span class="tag purple">Unique</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=LPK+Love+Passion+Karma+Nerul+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">💃</div>
+      <div class="loc-content">
+        <div class="loc-name">SinQ Night Club — Sinquerim</div>
+        <div class="loc-desc">Literally near your North Goa hotel. Outdoor bar, pool, DJ. Open in monsoon.</div>
+        <div class="loc-tags"><span class="tag blue">5 min away</span><span class="tag">🎵 DJ</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=SinQ+Night+Club+Sinquerim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🎉</div>
+      <div class="loc-content">
+        <div class="loc-name">Club Titos — Baga</div>
+        <div class="loc-desc">Goa's most famous club. DJ, dancing, cocktails. Touristy but iconic.</div>
+        <div class="loc-tags"><span class="tag">⭐ Iconic</span><span class="tag">🎵 Club</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Club+Titos+Baga+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🎰</div>
+      <div class="loc-content">
+        <div class="loc-name">Zuri Casino — In Your Hotel!</div>
+        <div class="loc-desc">On-site at Zuri White Sands. Blackjack, roulette, poker. Complimentary drinks for players. Dress smart.</div>
+        <div class="loc-tags"><span class="tag purple">Hotel casino</span><span class="tag green">Complimentary drinks</span></div>
+        <a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="map-btn">📍 Zuri Casino →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOD & DRINKS ============ -->
+<div id="fooddrinks" class="section">
+
+  <div class="alert alert-success" style="margin-top:4px">
+    🌿 <strong>Veg travellers are well-covered in Goa!</strong> Pure veg restaurants, South Indian chains, Gujarati thali spots, and veg-friendly cafés across both North and South Goa.
+  </div>
+
+  <div class="section-label">🌿 PURE VEG &amp; VEG-FIRST RESTAURANTS</div>
+
+  <div class="card" style="padding:10px">
+
+    <div style="font-size:0.7rem;font-weight:800;color:#15803d;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">⭐ NORTH GOA</div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🌿</div>
+      <div class="loc-content">
+        <div class="loc-name">Udupi The Plantain Leaf — Calangute <span class="veg-badge">🌿 PURE VEG</span></div>
+        <div class="loc-desc">One of Goa's best pure vegetarian restaurants. South Indian + North Indian thalis. Huge menu, quick service, very reasonable prices. Great for lunch.</div>
+        <div class="loc-tags"><span class="tag veg">Pure Veg</span><span class="tag blue">Near your stay</span><span class="tag">💰 Budget</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Udupi+Plantain+Leaf+Calangute+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🥗</div>
+      <div class="loc-content">
+        <div class="loc-name">Bean Me Up — Anjuna/Vagator <span class="veg-badge">🌱 100% VEGAN</span></div>
+        <div class="loc-desc">Goa's most famous vegan restaurant. Inside a stunning Portuguese villa. Home-made tofu &amp; tempeh. Raw Pad Thai, Thai curries, salads, fresh juices. Open 8am–11pm.</div>
+        <div class="loc-tags"><span class="tag veg">100% Vegan</span><span class="tag blue">Anjuna</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Bean+Me+Up+Anjuna+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🌸</div>
+      <div class="loc-content">
+        <div class="loc-name">Artjuna Garden Café — Anjuna <span class="veg-badge">🌿 VEG-FRIENDLY</span></div>
+        <div class="loc-desc">Beautiful garden café in Anjuna. Mostly vegetarian menu — wraps, salads, hummus, smoothie bowls, fresh juices. Gorgeous setting inside an old Goan house. Perfect for breakfast or lunch.</div>
+        <div class="loc-tags"><span class="tag veg">Mostly Veg</span><span class="tag blue">Anjuna</span><span class="tag">💰 Mid-range</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Artjuna+Garden+Cafe+Anjuna+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">☕</div>
+      <div class="loc-content">
+        <div class="loc-name">Cafe Chocolatti — Candolim <span class="veg-badge">🌿 VEG-FRIENDLY</span></div>
+        <div class="loc-desc">Near your hotel. Popular for veg breakfasts, sandwiches, smoothies, chocolates. Great morning spot. Also has veg pasta, wraps. Very cosy ambience.</div>
+        <div class="loc-tags"><span class="tag veg">Mostly Veg</span><span class="tag blue">5 min away</span><span class="tag">💰 Budget</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Chocolatti+Candolim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #7c3aed">
+      <div class="loc-icon">🍛</div>
+      <div class="loc-content">
+        <div class="loc-name">Ritz Classic — Panjim <span class="veg-badge">🌿 VEG OPTIONS</span></div>
+        <div class="loc-desc">Famous Panjim restaurant with great vegetarian Goan thali. Veg options include jackfruit curries, mushroom xacuti, solkadhi, and coconut-based gravies. Authentic Goan vegetarian food.</div>
+        <div class="loc-tags"><span class="tag veg">Veg Thali</span><span class="tag blue">Panjim</span><span class="tag">💰 Budget</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Ritz+Classic+Panjim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div style="font-size:0.7rem;font-weight:800;color:#15803d;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.5px">⭐ SOUTH GOA — NEAR YOUR VARCA STAY</div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🌿</div>
+      <div class="loc-content">
+        <div class="loc-name">The Veggie Vibes — Cavelossim <span class="veg-badge">🌿 PURE VEG + JAIN</span></div>
+        <div class="loc-desc"><strong>Closest pure veg restaurant to your South Goa hotel!</strong> 10 min from Varca. Pure vegetarian and Jain options. Chaap biryani, sizzlers, thalis. Fresh, flavourful, and highly rated. Perfect for the whole group.</div>
+        <div class="loc-tags"><span class="tag veg">Pure Veg</span><span class="tag veg">Jain options</span><span class="tag blue">Near Varca</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Veggie+Vibes+Cavelossim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🏠</div>
+      <div class="loc-content">
+        <div class="loc-name">Legacy of Bombay — Benaulim <span class="veg-badge">🌿 PURE VEG</span></div>
+        <div class="loc-desc">Mumbai street food in Goa! Pure vegetarian. Pav bhaji, vada pav, Maharashtrian snacks, South Indian items, Udupi-style food. Great for a casual veg lunch in Benaulim.</div>
+        <div class="loc-tags"><span class="tag veg">Pure Veg</span><span class="tag">🍛 Mumbai food</span><span class="tag blue">Benaulim</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Legacy+of+Bombay+Benaulim+Goa" target="_blank" class="map-btn">📍 Open in Maps</a>
+      </div>
+    </div>
+
+    <div class="loc-item" style="border-left:3px solid #16a34a">
+      <div class="loc-icon">🍛</div>
+      <div class="loc-content">
+        <div class="loc-name">Shree Ganesh Pure Veg — South Goa <span class="veg-badge">🌿 PURE VEG</span></div>
+        <div class="loc-desc">Traditional pure veg restaurant in South Goa. Good for a wholesome lunch with dal, sabzi, roti, rice. Local crowd, very affordable.</div>
+        <div class="loc-tags"><span class="tag veg">Pure Veg</span><span class="tag">💰 Budget</span></div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Ganesh+Pure+Veg+South+Goa" target="_blank" class="map-btn">📍 Find on Maps</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert alert-info">
+    🌿 <strong>Veg tip:</strong> Almost every Goan restaurant has a vegetarian section — jackfruit (kathal) dishes, mushroom xacuti, vegetable caldin, and coconut-based curries are excellent. Goa's Portuguese influence also means great veg options like vegetarian cafreal (herb-marinated), chips and dips, pasta, and wood-fired pizzas.
+  </div>
+
+  <div class="section-label" style="margin-top:4px">🍛 MUST-TRY GOAN DISHES (VEG FIRST)</div>
+  <div style="font-size:0.7rem;font-weight:800;color:#15803d;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">🌿 VEGETARIAN MUST-TRIES FIRST</div>
+  <div class="food-grid" style="margin-bottom:12px">
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🥛</span><div class="food-name" style="color:#14532d">Sol Kadhi</div><div class="food-note" style="color:#166534">Pink coconut + kokum drink. Tangy, cooling, digestive. Order at any Goan restaurant!</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🎂</span><div class="food-name" style="color:#14532d">Bebinca</div><div class="food-note" style="color:#166534">Goa's iconic layered coconut-egg dessert. Rich, sweet. Buy a box to take home!</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🫘</span><div class="food-name" style="color:#14532d">Mushroom Xacuti</div><div class="food-note" style="color:#166534">Veg version of Goa's famous xacuti curry. Coconut + poppy seeds. Rich and complex.</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🌱</span><div class="food-name" style="color:#14532d">Jackfruit (Kathal) Curry</div><div class="food-note" style="color:#166534">Traditional Goan veg star. Slow-cooked in coconut gravy. Meaty texture, beautiful flavour.</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🥥</span><div class="food-name" style="color:#14532d">Vegetable Caldin</div><div class="food-note" style="color:#166534">Mild coconut milk curry with vegetables. Portuguese influence. Light and fragrant.</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🍞</span><div class="food-name" style="color:#14532d">Poi Bread</div><div class="food-note" style="color:#166534">Traditional Goan bread. Wholesome bran rolls from clay ovens. Buy at local bakeries.</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🥞</span><div class="food-name" style="color:#14532d">Sannas</div><div class="food-note" style="color:#166534">Steamed coconut rice cakes. Soft, fluffy, slightly sweet. A Goan breakfast classic.</div></div>
+    <div class="food-card" style="background:#f0fdf4;border-color:#bbf7d0"><span class="food-emoji">🍰</span><div class="food-name" style="color:#14532d">Serradura</div><div class="food-note" style="color:#166534">Portuguese cream + biscuit pudding. Vegetarian dessert. Available at most restaurants.</div></div>
+  </div>
+  <div style="font-size:0.7rem;font-weight:800;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">🐟 NON-VEG GOAN CLASSICS (for the group)</div>
+  <div class="food-grid">
+    <div class="food-card"><span class="food-emoji">🐟</span><div class="food-name">Fish Curry Rice</div><div class="food-note">Daily staple. Coconut + kokum. Order everywhere.</div></div>
+    <div class="food-card"><span class="food-emoji">🍗</span><div class="food-name">Chicken Xacuti</div><div class="food-note">Rich coconut curry with poppy seeds. Complex &amp; bold.</div></div>
+    <div class="food-card"><span class="food-emoji">🥩</span><div class="food-name">Pork Vindaloo</div><div class="food-note">Goa's most famous. Fiery, tangy, Portuguese-origin.</div></div>
+    <div class="food-card"><span class="food-emoji">🦐</span><div class="food-name">Prawn Balchão</div><div class="food-note">Tangy prawn pickle. Bold, sour, spicy with rice.</div></div>
+    <div class="food-card"><span class="food-emoji">🐟</span><div class="food-name">Mackerel Recheado</div><div class="food-note">Stuffed spiced fried mackerel. Incredible!</div></div>
+    <div class="food-card"><span class="food-emoji">🍱</span><div class="food-name">Goan Fish Thali</div><div class="food-note">Best value lunch — fish curry, rice, veggies, papad.</div></div>
+  </div>
+
+  <div class="section-label">🥃 MUST-TRY DRINKS</div>
+
+  <div class="drink-card">
+    <div class="drink-emoji">🥃</div>
+    <div>
+      <div class="drink-name">Cashew Feni — The Soul of Goa</div>
+      <div class="drink-desc">Made from fermented cashew apples. Protected GI product. 40–45% ABV. Try neat, then with lime soda. <strong>Brands: Cazulo, Big Boss, Sanjeevani.</strong> ~₹200–400/bottle.</div>
+    </div>
+  </div>
+
+  <div class="drink-card">
+    <div class="drink-emoji">🥥</div>
+    <div>
+      <div class="drink-name">Coconut Feni / Toddy</div>
+      <div class="drink-desc">Distilled from coconut sap. Lighter, nuttier. Locals love it. Also ask for fresh coconut toddy (niro) if available.</div>
+    </div>
+  </div>
+
+  <div class="drink-card">
+    <div class="drink-emoji">🍹</div>
+    <div>
+      <div class="drink-name">Feni Cocktails</div>
+      <div class="drink-desc">Feni Mojito (feni + lime + mint + soda) or Feni Collins. Available at most beach restaurants. Refreshing and local.</div>
+    </div>
+  </div>
+
+  <div class="drink-card" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#bbf7d0">
+    <div class="drink-emoji">🍺</div>
+    <div>
+      <div class="drink-name" style="color:#15803d">Kingfisher Beer</div>
+      <div class="drink-desc" style="color:#166534">India's #1 beer. Cold Kingfisher + Goan fish curry = perfection. ~₹150–250 at restaurants.</div>
+    </div>
+  </div>
+
+  <div class="drink-card" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fed7aa">
+    <div class="drink-emoji">🌴</div>
+    <div>
+      <div class="drink-name" style="color:#c2410c">Fresh Coconut Water</div>
+      <div class="drink-desc" style="color:#9a3412">Roadside vendors everywhere. ~₹30–40 each. Best post-walk drink in humid monsoon weather.</div>
+    </div>
+  </div>
+
+  <div class="section-label">🛒 WHERE TO BUY</div>
+  <div class="card" style="padding:10px">
+    <div class="loc-item">
+      <div class="loc-icon">🛒</div>
+      <div class="loc-content">
+        <div class="loc-name">Magsons Supermarket — Calangute &amp; Panjim</div>
+        <div class="loc-desc">Best selection. Feni, bebinca, cashews, Goan pickles, spice mixes. Best prices in Goa.</div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Magsons+Supermarket+Calangute+Goa" target="_blank" class="map-btn">📍 Magsons Calangute</a>
+        &nbsp;<a href="https://www.google.com/maps/search/?api=1&amp;query=Magsons+Supermarket+Panjim+Goa" target="_blank" class="map-btn">📍 Magsons Panjim</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🍷</div>
+      <div class="loc-content">
+        <div class="loc-name">Tom's Wine Shop — Candolim</div>
+        <div class="loc-desc">Near your hotel. Wide range of Feni brands, local wines, imported spirits. Good prices.</div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=wine+shop+Candolim+Goa" target="_blank" class="map-btn">📍 Wine Shops →</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">✈️</div>
+      <div class="loc-content">
+        <div class="loc-name">Dabolim Airport Duty Free</div>
+        <div class="loc-desc">Buy Feni at departure to avoid liquid restrictions. Sealed gift boxes available. Best option for flying.</div>
+        <a href="https://www.google.com/maps?q=15.3808,73.8314" target="_blank" class="map-btn">📍 GOI Airport →</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🌿</div>
+      <div class="loc-content">
+        <div class="loc-name">Sahakari Spice Farm Shop</div>
+        <div class="loc-desc">Buy at the source. Whole spices, spice mixes, vanilla pods, cardamom. Better quality than markets.</div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Sahakari+Spice+Farm+Ponda+Goa" target="_blank" class="map-btn">📍 Spice Farm →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TIPS ============ -->
+<div id="tips" class="section">
+
+  <div class="section-label" style="margin-top:4px">🌧️ MONSOON SAFETY</div>
+  <div class="alert alert-danger">🚨 <strong>NEVER swim in the sea during monsoon.</strong> Dangerous currents kill experienced swimmers every year. Red flags = no entry. Stick to pools and calm lagoons.</div>
+
+  <div class="section-label">🚗 GETTING AROUND</div>
+  <div class="card" style="padding:10px">
+    <div class="loc-item">
+      <div class="loc-icon">🚗</div>
+      <div class="loc-content">
+        <div class="loc-name">✅ Private Cab (Recommended)</div>
+        <div class="loc-desc">~₹2,000–3,000/full day. Best for Dudhsagar, Old Goa, Panjim trips. Hotel can arrange. You control the schedule.</div>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">📱</div>
+      <div class="loc-content">
+        <div class="loc-name">✅ Uber / Ola / Rapido</div>
+        <div class="loc-desc">Available in both North and South Goa. Great for shorter trips. Cheaper than local taxis for nearby spots.</div>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">🏍️</div>
+      <div class="loc-content">
+        <div class="loc-name">⚠️ Scooter Rental — Caution</div>
+        <div class="loc-desc">~₹300–500/day. Wet monsoon roads are very slippery. Only if experienced rider. Never ride in heavy rain. Always wear helmet.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🛵 SCOOTER RENTAL GUIDE</div>
+
+  <div class="alert alert-warn">
+    🕐 <strong>You land at 17:55, arrive hotel ~19:00.</strong> Too late to rent a scooty on Day 1. Pick one up <strong>morning of Day 2 (Jun 28)</strong> — shops open by 8am, 5 min from your hotel!
+  </div>
+
+  <div class="alert alert-danger">
+    🌧️ <strong>Monsoon caution:</strong> Wet roads are slippery, especially Goa's red laterite soil. Never ride in heavy rain. Park and wait it out. Always wear helmets (mandatory by law). Best riding window: 7–11am when rain is lightest.
+  </div>
+
+  <div class="scooty-card">
+    <div class="sc-title">🏆 Lobo Car &amp; Bike Rentals — Candolim <span style="background:#dcfce7;color:#15803d;border-radius:4px;padding:2px 6px;font-size:0.65rem">CLOSEST TO YOUR HOTEL</span></div>
+    <div class="sc-desc">Located on the <strong>Nerul–Candolim Road</strong> — literally 5 min from your stay. One of the most trusted rental places in the area. Offers Activa, Dio, Vespa, Royal Enfield, Fascino.</div>
+    <div class="sc-meta">
+      <div class="sc-meta-item"><div class="sc-meta-label">Activa/Dio</div><div class="sc-meta-value">₹350–500/day</div></div>
+      <div class="sc-meta-item"><div class="sc-meta-label">Vespa/Aprilia</div><div class="sc-meta-value">₹500–800/day</div></div>
+      <div class="sc-meta-item"><div class="sc-meta-label">Phone</div><div class="sc-meta-value">+91 98221 42601</div></div>
+      <div class="sc-meta-item"><div class="sc-meta-label">Weekly deal</div><div class="sc-meta-value">Ask for 5-day rate</div></div>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Lobo+Car+Rentals+Candolim+Goa" target="_blank" class="map-btn" style="margin-top:10px">📍 Lobo Rentals → Maps</a>
+    &nbsp;<a href="tel:+919822142601" class="map-btn" style="background:#16a34a">📞 Call Lobo</a>
+  </div>
+
+  <div class="scooty-card">
+    <div class="sc-title">🛵 Gearz Vehicle Rentals — Candolim</div>
+    <div class="sc-desc">Another well-rated option in Candolim. Starting from ₹399/day. Good condition bikes. Helmet included. You can also pre-book via Rentrip or Thrillophilia for guaranteed availability.</div>
+    <div class="sc-meta">
+      <div class="sc-meta-item"><div class="sc-meta-label">Activa 125</div><div class="sc-meta-value">₹399–500/day</div></div>
+      <div class="sc-meta-item"><div class="sc-meta-label">Pre-book</div><div class="sc-meta-value">Rentrip.in</div></div>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Gearz+Vehicle+Candolim+Goa" target="_blank" class="map-btn" style="margin-top:10px">📍 Gearz → Maps</a>
+    &nbsp;<a href="https://www.rentrip.in/rent-bike/goa/candolim" target="_blank" class="map-btn" style="background:#2563eb">🌐 Pre-Book Online</a>
+  </div>
+
+  <div class="scooty-card">
+    <div class="sc-title">📋 What to Check Before Renting</div>
+    <div class="sc-desc">
+      ✅ Take photos/video of all scratches BEFORE you ride<br>
+      ✅ Check tyre pressure — critical in monsoon<br>
+      ✅ Check brakes front + rear<br>
+      ✅ Verify fuel level (ask for full tank)<br>
+      ✅ Ask for 2 helmets (for pillion rider)<br>
+      ✅ Keep rental agreement with you<br>
+      ✅ Carry your driving licence (mandatory)<br>
+      ✅ Check if petrol station is nearby<br>
+      💡 Monsoon deal: prices are negotiable. Ask for 4-day rate if renting Jun 28–Jul 1.
+    </div>
+  </div>
+
+  <div class="card" style="padding:12px">
+    <div class="card-title">⛽ Petrol Stations Near Your Stay</div>
+    <div class="loc-item" style="margin-bottom:6px">
+      <div class="loc-icon">⛽</div>
+      <div class="loc-content">
+        <div class="loc-name">HP Petrol Pump — Candolim</div>
+        <div class="loc-desc">On the main Candolim road. ~3 min ride from most hotels in the area.</div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=petrol+pump+Candolim+Goa" target="_blank" class="map-btn">📍 Find Petrol →</a>
+      </div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-icon">⛽</div>
+      <div class="loc-content">
+        <div class="loc-name">Petrol Pump — Anjuna Junction</div>
+        <div class="loc-desc">On NH66 near Anjuna turnoff. Useful if exploring Vagator/Anjuna area.</div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=petrol+pump+Anjuna+Goa" target="_blank" class="map-btn">📍 Find Petrol →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="padding:12px">
+    <div class="card-title">🗺️ Airport → Hotel Route (Jun 27)</div>
+    <div style="padding:4px 0">
+      <div class="route-step"><div class="route-dot" style="background:#dc2626"></div><div><strong>Dabolim Airport (GOI)</strong> — Exit, take cab/Uber. 17:55 arrival.</div></div>
+      <div class="route-step"><div class="route-dot" style="background:#ea580c"></div><div>→ <strong>NH66 North</strong> — The highway north through Verna, Cortalim (~20 min)</div></div>
+      <div class="route-step"><div class="route-dot" style="background:#ca8a04"></div><div>→ <strong>Cortalim Bridge</strong> over Zuari River — scenic even in monsoon</div></div>
+      <div class="route-step"><div class="route-dot" style="background:#16a34a"></div><div>→ <strong>NH566 / Panjim bypass</strong> — continue north (~15 min)</div></div>
+      <div class="route-step"><div class="route-dot" style="background:#0891b2"></div><div>→ <strong>Calangute / Candolim exit</strong> — turn off NH66 (~10 min)</div></div>
+      <div class="route-step"><div class="route-dot" style="background:#2563eb"></div><div>🏁 <strong>Your hotel, Sinquerim/Candolim</strong> — total ~50–60 min from airport</div></div>
+    </div>
+    <div class="alert alert-info" style="margin-top:8px">
+      💡 Pre-book airport cab via your hotel or app (~₹800–1,200). Avoid the unmetered taxi queue outside — they charge ₹1,500–2,000 for the same trip.
+    </div>
+    <a href="https://www.google.com/maps/dir/Dabolim+Airport+Goa/Candolim+Goa" target="_blank" class="map-btn" style="margin-top:4px">📍 Airport → Candolim Route</a>
+  </div>
+
+  <div class="section-label">🧳 PACKING ESSENTIALS</div>
+  <div class="pack-list">
+    <div class="pack-item">🌂 Compact umbrella</div>
+    <div class="pack-item">🧥 Light rain jacket</div>
+    <div class="pack-item">👟 Waterproof sandals</div>
+    <div class="pack-item">🦟 Mosquito repellent</div>
+    <div class="pack-item">💊 Basic meds + antacids</div>
+    <div class="pack-item">🔋 Power bank</div>
+    <div class="pack-item">📱 Offline Maps saved</div>
+    <div class="pack-item">🧴 Sunscreen (UV strong)</div>
+    <div class="pack-item">📷 Camera bag (waterproof)</div>
+    <div class="pack-item">🆔 Aadhaar + PAN card</div>
+    <div class="pack-item">💳 UPI + cash (₹5,000)</div>
+    <div class="pack-item">🏥 Travel insurance</div>
+  </div>
+
+  <div class="section-label">💰 COST GUIDE</div>
+  <div class="card">
+    <table style="width:100%;border-collapse:collapse;font-size:0.75rem">
+      <tbody><tr style="background:#f8fafc"><th style="padding:6px 8px;text-align:left;font-size:0.7rem;color:#64748b;text-transform:uppercase">Item</th><th style="padding:6px 8px;text-align:right;font-size:0.7rem;color:#64748b">Budget</th><th style="padding:6px 8px;text-align:right;font-size:0.7rem;color:#64748b">Mid</th></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid #f1f5f9">Local meal (fish thali)</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹200</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹600</td></tr>
+      <tr style="background:#f8fafc"><td style="padding:6px 8px">Nice restaurant dinner</td><td style="padding:6px 8px;text-align:right">₹800</td><td style="padding:6px 8px;text-align:right">₹2,000</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid #f1f5f9">Kingfisher beer</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹150</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹250</td></tr>
+      <tr style="background:#f8fafc"><td style="padding:6px 8px">Cocktail</td><td style="padding:6px 8px;text-align:right">₹350</td><td style="padding:6px 8px;text-align:right">₹600</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid #f1f5f9">Feni bottle</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹250</td><td style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹800</td></tr>
+      <tr style="background:#f8fafc"><td style="padding:6px 8px">Private cab full day</td><td colspan="2" style="padding:6px 8px;text-align:right">₹2,000–3,000</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid #f1f5f9">Dudhsagar trek</td><td colspan="2" style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹1,500–2,000/person</td></tr>
+      <tr style="background:#f8fafc"><td style="padding:6px 8px">Mandovi River Cruise</td><td colspan="2" style="padding:6px 8px;text-align:right">₹400–500/person</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid #f1f5f9">Spice Farm tour</td><td colspan="2" style="padding:6px 8px;border-top:1px solid #f1f5f9;text-align:right">₹600–800/person (incl. lunch)</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="section-label">📞 EMERGENCY CONTACTS</div>
+  <div class="card">
+    <div style="font-size:0.8rem;line-height:2">
+      🆘 <strong>Emergency:</strong> 112<br>
+      👮 <strong>Tourist Police Goa:</strong> 0832-2228444<br>
+      🏛️ <strong>GTDC:</strong> 0832-2226515<br>
+      ✈️ <strong>IndiGo:</strong> 0124-6173838<br>
+      📱 <strong>MakeMy Trip:</strong> 0124-4628747<br>
+      🏥 <strong>Manipal Hospital Goa:</strong> 0832-2522222
+    </div>
+  </div>
+
+  <div class="section-label">🏆 LOCAL PRO TIPS</div>
+  <div class="card">
+    <div style="font-size:0.78rem;line-height:1.9">
+      ☀️ Do outdoor activities <strong>before noon</strong> — rain usually comes in the afternoon<br>
+      🌧️ Rain comes in bursts — wait it out at a café then go again<br>
+      📵 Download Google Maps area <strong>offline</strong> before you go<br>
+      🕺 Restaurants much less busy — easier to get good tables<br>
+      💰 Off-season = vendors more willing to <strong>bargain at markets</strong><br>
+      🤤 Always confirm tours the morning of — some cancel in heavy rain<br>
+      🧴 UV is still strong on cloudy monsoon days — use sunscreen<br>
+      🌿 Goa in the rain smells incredible — the red laterite soil comes alive<br>
+      🍻 Alcohol is among cheapest in India due to low Goa state tax
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ---- WEB CHECK-IN COUNTDOWN ----
+const flights = [
+  {
+    label: 'Outbound (6E 6345)',
+    checkinOpen: new Date('2026-06-25T16:15:00+05:30'),
+    checkinClose: new Date('2026-06-27T15:15:00+05:30'),
+    depart: new Date('2026-06-27T16:15:00+05:30'),
+    checkinUrl: 'https://www.goindigo.in/check-in.html',
+    trackUrl: 'https://www.flightradar24.com/data/flights/6e6345'
+  },
+  {
+    label: 'Return (6E 381)',
+    checkinOpen: new Date('2026-07-03T18:25:00+05:30'),
+    checkinClose: new Date('2026-07-05T17:25:00+05:30'),
+    depart: new Date('2026-07-05T18:25:00+05:30'),
+    checkinUrl: 'https://www.goindigo.in/check-in.html',
+    trackUrl: 'https://www.flightradar24.com/data/flights/6e381'
+  }
+];
+
+function formatCountdown(ms) {
+  if (ms <= 0) return '00:00:00';
+  const s = Math.floor(ms / 1000);
+  const d = Math.floor(s / 86400);
+  const h = Math.floor((s % 86400) / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  if (d > 0) return `${d}d ${h}h ${m}m`;
+  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+}
+
+function updateBanner() {
+  const now = new Date();
+  const banner = document.getElementById('checkinBanner');
+  const icon = document.getElementById('bannerIcon');
+  const title = document.getElementById('bannerTitle');
+  const sub = document.getElementById('bannerSub');
+  const timer = document.getElementById('countdownTimer');
+  const actions = document.getElementById('bannerActions');
+
+  // Find relevant flight state
+  let f = flights[0]; // default outbound
+  // If outbound already departed, switch to return
+  if (now > flights[0].depart) f = flights[1];
+
+  const msToOpen = f.checkinOpen - now;
+  const msToClose = f.checkinClose - now;
+  const msToDepart = f.depart - now;
+
+  if (now > f.depart) {
+    // Both flights done — show safe travels
+    banner.className = 'checkin-banner open';
+    icon.textContent = '🏠';
+    title.textContent = 'Trip Complete!';
+    sub.textContent = 'Hope you had an amazing time in Goa! 🌴';
+    timer.textContent = '';
+    actions.innerHTML = '';
+  } else if (msToOpen > 0) {
+    // Check-in not open yet
+    banner.className = 'checkin-banner waiting';
+    icon.textContent = '⏳';
+    title.textContent = `${f.label}: Web check-in opens in...`;
+    sub.textContent = `Opens ${f.checkinOpen.toLocaleString('en-IN', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})} IST`;
+    timer.textContent = formatCountdown(msToOpen);
+    timer.style.color = '#1d4ed8';
+    actions.innerHTML = `<a href="${f.trackUrl}" target="_blank" class="action-btn btn-blue">📡 Track Flight</a>`;
+  } else if (msToClose > 0) {
+    // Check-in is OPEN NOW
+    banner.className = 'checkin-banner open';
+    icon.textContent = '🟢';
+    title.textContent = `✅ ${f.label}: Web Check-In is OPEN!`;
+    sub.textContent = `Closes ${f.checkinClose.toLocaleString('en-IN', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})} IST — check in now for better seats!`;
+    timer.textContent = `Closes in: ${formatCountdown(msToClose)}`;
+    timer.style.color = '#16a34a';
+    actions.innerHTML = `<a href="${f.checkinUrl}" target="_blank" class="action-btn btn-green">🌐 Check In Now!</a><a href="${f.trackUrl}" target="_blank" class="action-btn btn-blue">📡 Track</a>`;
+  } else {
+    // Closing soon / after check-in closes
+    banner.className = 'checkin-banner soon';
+    icon.textContent = '✈️';
+    title.textContent = `${f.label}: Departs in...`;
+    sub.textContent = `Check-in closed. Head to airport! Be there 2 hrs before departure.`;
+    timer.textContent = formatCountdown(msToDepart);
+    timer.style.color = '#ea580c';
+    actions.innerHTML = `<a href="${f.trackUrl}" target="_blank" class="action-btn btn-orange">📡 Track Flight</a>`;
+  }
+}
+
+// ---- TAB NAVIGATION ----
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navMap = {home:0,flights:1,itinerary:2,places:3,fooddrinks:4,tips:5};
+  document.querySelectorAll('.nav-item')[navMap[id]].classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ---- DAY ACCORDION ----
+function toggleDay(id) {
+  const body = document.getElementById(id);
+  body.classList.toggle('open');
+}
+
+// Init & update every second
+updateBanner();
+setInterval(updateBanner, 1000);
+</script>
+
+
+</body></html>
