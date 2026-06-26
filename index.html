@@ -204,19 +204,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <!-- WEB CHECK-IN BANNER -->
-<div id="checkinBanner" class="checkin-banner waiting" style="margin:12px 12px 0">
-  <div class="banner-icon" id="bannerIcon">⏳</div>
+<div id="checkinBanner" class="checkin-banner open" style="margin:12px 12px 0">
+  <div class="banner-icon" id="bannerIcon">🟢</div>
   <div class="banner-text">
-    <div class="banner-title" id="bannerTitle">Outbound (6E 6345): Web check-in opens in...</div>
-    <div class="banner-sub" id="bannerSub">Opens 25 Jun, 04:15 pm IST</div>
-    <div class="countdown-timer" id="countdownTimer" style="color: rgb(29, 78, 216);">02:27:27</div>
-    <div class="banner-actions" id="bannerActions"><a href="https://www.flightradar24.com/data/flights/6e6345" target="_blank" class="action-btn btn-blue">📡 Track Flight</a></div>
+    <div class="banner-title" id="bannerTitle">✅ Outbound (6E 6345): Web Check-In is OPEN!</div>
+    <div class="banner-sub" id="bannerSub">Closes 27 Jun, 03:15 pm IST — check in now for better seats!</div>
+    <div class="countdown-timer" id="countdownTimer" style="color: rgb(22, 163, 74);">Closes in: 1d 2h 20m</div>
+    <div class="banner-actions" id="bannerActions"><a href="https://www.goindigo.in/check-in.html" target="_blank" class="action-btn btn-green">🌐 Check In Now!</a><a href="https://www.flightradar24.com/data/flights/6e6345" target="_blank" class="action-btn btn-blue">📡 Track</a></div>
   </div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <div class="nav-item" onclick="showSection(&#39;home&#39;)">
+  <div class="nav-item active" onclick="showSection(&#39;home&#39;)">
     <span class="nav-icon">🏠</span><span class="nav-label">Home</span>
   </div>
   <div class="nav-item" onclick="showSection(&#39;flights&#39;)">
@@ -231,13 +231,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="nav-item" onclick="showSection(&#39;fooddrinks&#39;)">
     <span class="nav-icon">🍹</span><span class="nav-label">Food</span>
   </div>
-  <div class="nav-item active" onclick="showSection(&#39;tips&#39;)">
+  <div class="nav-item" onclick="showSection(&#39;tips&#39;)">
     <span class="nav-icon">🛵</span><span class="nav-label">Tips</span>
   </div>
 </div>
 
 <!-- ============ HOME ============ -->
-<div id="home" class="section">
+<div id="home" class="section active">
 
   <div class="section-label">📊 Trip Overview</div>
   <div class="stats-row">
@@ -263,7 +263,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <div class="loc-content">
         <div class="loc-name">Majestic Eco Comforts — Varca Beach</div>
         <div class="loc-desc">Jul 2 (1 night) · 4-star eco resort · 4.5★ with 1,148 reviews</div>
-        <div><a href="https://www.google.com/maps/place/Majestic+Eco+Comforts/@15.2269245,73.9352515,17z" target="_blank" class="map-btn">📍 View on Maps</a></div>
+        <div><a href="https://www.google.com/maps/search/?api=1&amp;query=Majestic+Eco+Comforts+Varca+Goa&amp;ll=15.2269245,73.9352515" target="_blank" class="map-btn">📍 View on Maps</a></div>
       </div>
     </div>
 
@@ -272,7 +272,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <div class="loc-content">
         <div class="loc-name">The Zuri White Sands Resort &amp; Casino</div>
         <div class="loc-desc">Jul 3–5 (3 nights) · Varca Beach · 5-star luxury + Casino · 4.3★ with 8,443 reviews</div>
-        <div><a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="map-btn">📍 View on Maps</a></div>
+        <div><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Zuri+White+Sands+Varca+Goa&amp;ll=15.2264442,73.932068" target="_blank" class="map-btn">📍 View on Maps</a></div>
       </div>
     </div>
 
@@ -505,7 +505,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div id="d2" class="day-body">
     <div class="timeline-item" style="background:#fff7ed;border-radius:8px;padding:8px;border:none">
       <span class="time-pill orange">8:00 AM 🛵</span>
-      <div class="timeline-text"><strong>Rent your scooty!</strong> Walk to <strong>Martinet Vagator Scooter Rentals</strong> — H.No.557, Coutinho Vaddo, literally in your neighbourhood. Rent 2× Activa/Dio (~₹400–500/bike/day). Inspect bikes, take photos, get 2 helmets each. Ask for 4-day rate (Jun 28–Jul 1) to save money.<br><a href="https://www.google.com/maps/place/Martinet+Vagator+Scooter%2F+Bike+Rentals+and+Taxi+Services/@15.5978935,73.7420432,17z" target="_blank" class="timeline-map-link">📍 Martinet Vagator →</a> &nbsp;<a href="tel:+919822144859" class="timeline-map-link" style="color:#16a34a">📞 098221 44859</a></div>
+      <div class="timeline-text"><strong>Rent your scooty!</strong> Walk to <strong>Martinet Vagator Scooter Rentals</strong> — H.No.557, Coutinho Vaddo, literally in your neighbourhood. Rent 2× Activa/Dio (~₹400–500/bike/day). Inspect bikes, take photos, get 2 helmets each. Ask for 4-day rate (Jun 28–Jul 1) to save money.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Martinet+Vagator+Scooter+Bike+Rentals+Vagator+Goa&amp;ll=15.5978935,73.7420432" target="_blank" class="timeline-map-link">📍 Martinet Vagator →</a> &nbsp;<a href="tel:+919822144859" class="timeline-map-link" style="color:#16a34a">📞 098221 44859</a></div>
     </div>
     <div class="timeline-item">
       <span class="time-pill">MORNING</span>
@@ -642,7 +642,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="timeline-item">
       <span class="time-pill">AFTNOON</span>
-      <div class="timeline-text">✅ Check into <strong>Majestic Eco Comforts, Varca</strong>. Explore the eco property. Walk to Varca Beach — long, wide, completely empty in monsoon. Beautiful and peaceful.<br><a href="https://www.google.com/maps/place/Majestic+Eco+Comforts/@15.2269245,73.9352515,17z" target="_blank" class="timeline-map-link">📍 Majestic Eco Comforts →</a> &nbsp;<a href="https://www.google.com/maps?q=Varca+Beach+Goa" target="_blank" class="timeline-map-link">📍 Varca Beach →</a></div>
+      <div class="timeline-text">✅ Check into <strong>Majestic Eco Comforts, Varca</strong>. Explore the eco property. Walk to Varca Beach — long, wide, completely empty in monsoon. Beautiful and peaceful.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Majestic+Eco+Comforts+Varca+Goa&amp;ll=15.2269245,73.9352515" target="_blank" class="timeline-map-link">📍 Majestic Eco Comforts →</a> &nbsp;<a href="https://www.google.com/maps?q=Varca+Beach+Goa" target="_blank" class="timeline-map-link">📍 Varca Beach →</a></div>
     </div>
     <div class="timeline-item">
       <span class="time-pill purple">DINNER</span>
@@ -664,7 +664,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="alert alert-info">⏰ Return web check-in opens at <strong>18:25 tonight</strong>! Remember to check in after dinner.</div>
     <div class="timeline-item">
       <span class="time-pill purple">MORNING</span>
-      <div class="timeline-text">🎒 Short walk/cab to check into <strong>Zuri White Sands</strong>. Same beach as Majestic Eco — literally 5 min walk! Enjoy the 5-star facilities, pool, beach access.<br><a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="timeline-map-link">📍 The Zuri White Sands →</a></div>
+      <div class="timeline-text">🎒 Short walk/cab to check into <strong>Zuri White Sands</strong>. Same beach as Majestic Eco — literally 5 min walk! Enjoy the 5-star facilities, pool, beach access.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Zuri+White+Sands+Varca+Goa&amp;ll=15.2264442,73.932068" target="_blank" class="timeline-map-link">📍 The Zuri White Sands →</a></div>
     </div>
     <div class="timeline-item">
       <span class="time-pill orange">AFTNOON</span>
@@ -1036,7 +1036,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <div class="loc-name">Zuri Casino — In Your Hotel!</div>
         <div class="loc-desc">On-site at Zuri White Sands. Blackjack, roulette, poker. Complimentary drinks for players. Dress smart.</div>
         <div class="loc-tags"><span class="tag purple">Hotel casino</span><span class="tag green">Complimentary drinks</span></div>
-        <a href="https://www.google.com/maps/place/The+Zuri+White+Sands,+Goa+Resort+%26+Casino/@15.2264442,73.932068,17z" target="_blank" class="map-btn">📍 Zuri Casino →</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Zuri+White+Sands+Varca+Goa&amp;ll=15.2264442,73.932068" target="_blank" class="map-btn">📍 Zuri Casino →</a>
       </div>
     </div>
   </div>
@@ -1246,7 +1246,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <!-- ============ TIPS ============ -->
-<div id="tips" class="section active">
+<div id="tips" class="section">
 
   <div class="section-label" style="margin-top:4px">🌧️ MONSOON SAFETY</div>
   <div class="alert alert-danger">🚨 <strong>NEVER swim in the sea during monsoon.</strong> Dangerous currents kill experienced swimmers every year. Red flags = no entry. Stick to pools and calm lagoons.</div>
@@ -1295,7 +1295,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <div class="sc-meta-item"><div class="sc-meta-label">Rating</div><div class="sc-meta-value">⭐ 5.0 / 111 reviews</div></div>
       <div class="sc-meta-item"><div class="sc-meta-label">Best deal</div><div class="sc-meta-value">Ask 4-day rate</div></div>
     </div>
-    <a href="https://www.google.com/maps/place/Martinet+Vagator+Scooter%2F+Bike+Rentals+and+Taxi+Services/@15.5978935,73.7420432,17z" target="_blank" class="map-btn" style="margin-top:10px">📍 Martinet → Maps</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Martinet+Vagator+Scooter+Bike+Rentals+Vagator+Goa&amp;ll=15.5978935,73.7420432" target="_blank" class="map-btn" style="margin-top:10px">📍 Martinet → Maps</a>
     &nbsp;<a href="tel:+919822144859" class="map-btn" style="background:#16a34a">📞 098221 44859</a>
   </div>
 
